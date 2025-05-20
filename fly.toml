@@ -1,5 +1,7 @@
+app = "https-upgrader-fly"  # заменишь на своё имя приложения на fly.io
+
 [build]
-  image = "miscudi91/nginx"
+  dockerfile = "Dockerfile"
 
 [[services]]
   internal_port = 8080
