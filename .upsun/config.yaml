@@ -1,4 +1,4 @@
-# Upsun configuration, generated using AI at: 2026-08-08T19:28:19.462Z
+# Upsun configuration, generated using AI at: 2026-08-08T19:34:39.979Z
 # AI can make mistakes. Please modify this file to suit your needs.
 applications:
   https-upgrader:
@@ -11,7 +11,6 @@ applications:
     hooks:
       build: |
         set -ex
-        # No additional build steps needed
     web:
       commands:
         start: nginx -g 'daemon off;'
