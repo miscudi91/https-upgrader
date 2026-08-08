@@ -1,0 +1,29 @@
+# Upsun configuration, generated using AI at: 2026-08-08T19:28:19.462Z
+# AI can make mistakes. Please modify this file to suit your needs.
+applications:
+  https-upgrader:
+    type: composable:25.11
+    stack:
+      packages:
+        - nginx
+    build:
+      flavor: none
+    hooks:
+      build: |
+        set -ex
+        # No additional build steps needed
+    web:
+      commands:
+        start: nginx -g 'daemon off;'
+      locations:
+        /:
+          root: ''
+          passthru: true
+    mounts:
+      conf:
+        source: storage
+
+routes:
+  https://{default}/:
+    type: upstream
+    upstream: https-upgrader:http
